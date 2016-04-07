@@ -1,0 +1,82 @@
+.gradle
+.settings
+bin
+!build
+build/classes
+build/dependency-cache
+build/natives
+build/resources
+build/sources
+build/taskLogs
+build/tmp
+!lib
+!build/libs
+!build/libs/*
+eclipse
+out
+gradle
+.gradle
+!src
+!stuff
+!versionChecker
+*.classpath
+*.project
+
+!build.gradle
+!README.txt
+!CHANGELOG.txt
+!.gitignore
+
+*.iml
+*.ipr
+*.iws
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+!*.lnk
