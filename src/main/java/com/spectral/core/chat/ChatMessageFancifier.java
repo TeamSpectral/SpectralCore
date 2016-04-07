@@ -12,7 +12,12 @@ public class ChatMessageFancifier {
     final String UPDATE_MESSAGE = "[Update Avaliable] ";
 
     public ChatComponentText fancifyUpdateMessage(String msg) {
-        return (ChatComponentText) new ChatComponentText(UPDATE_MESSAGE + msg).setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GREEN));
+        try {
+            return (ChatComponentText) new ChatComponentText(UPDATE_MESSAGE + msg).setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GREEN));
+        } catch (NoSuchMethodError e) {
+            return new ChatComponentText(msg);
+        }
+
     }
 
     public ChatComponentText makeURL(ChatComponentText original, URL url) {
