@@ -16,6 +16,10 @@ public class ChatMessageFancifier {
             return (ChatComponentText) new ChatComponentText(UPDATE_MESSAGE + msg).setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GREEN));
         } catch (NoSuchMethodError e) {
             return new ChatComponentText(msg);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ChatComponentText(msg);
+
         }
 
     }

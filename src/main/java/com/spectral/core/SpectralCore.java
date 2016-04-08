@@ -16,16 +16,18 @@ public class SpectralCore {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        System.out.println("Init (SpectralCore)");
         FMLCommonHandler.instance().bus().register(this);
     }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        System.out.println("Preinit (SpectralCore)");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        System.out.println("Postinit (SpectralCore)");
         try {
             VersionCheck.verCheck();
         } catch (IOException e) {
@@ -35,11 +37,10 @@ public class SpectralCore {
 
     @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        String k = "";
         try {
             if (VersionCheck.messages.size() > 0)
                 for (String s : VersionCheck.messages.keySet()) {
-                    k = s;
+                    System.out.println("Update avaliable - " + s);
                     VersionCheck.messages.remove(s);
                     event.player.addChatMessage(new ChatMessageFancifier().fancifyUpdateMessage(s));
                     // event.player.addChatMessage(new ChatMessageFancifier().makeURL(new ChatMessageFancifier().fancifyUpdateMessage("Update HERE!"), new URL(VersionCheck.modnametourl.get(VersionCheck.messages.get(s)))));
