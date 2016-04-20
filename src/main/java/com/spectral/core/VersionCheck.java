@@ -1,5 +1,6 @@
 package com.spectral.core;
 
+import com.google.common.collect.Lists;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -8,10 +9,11 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
+import java.util.List;
 
 public class VersionCheck {
     public static HashMap<String, String> messages = new HashMap<String, String>();
-    public static HashMap<String, String> modnametourl = new HashMap<String, String>();
+    public static List<String> urls = Lists.newArrayList();
 
     public static boolean doesModHaveLatest(Object mod, int latest) {
         return Mods.isMod(mod) && Mods.doesModFollowVersioningRules(mod) >= latest;
@@ -40,7 +42,7 @@ public class VersionCheck {
 
             if (!doesModHaveLatest(Mods.modList.get(name), jsonObject.getInt("version"))) {
                 messages.put(jsonObject.getString("mcmessage"), name);
-                modnametourl.put(name, jsonObject.getString("url"));
+                urls.add(jsonObject.getString("url"));
             } else {
                 System.out.println(name + " is up to date!");
             }

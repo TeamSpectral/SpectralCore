@@ -45,10 +45,12 @@ public class SpectralCore {
                     event.player.addChatMessage(new ChatMessageFancifier().fancifyUpdateMessage(s));
                     // event.player.addChatMessage(new ChatMessageFancifier().makeURL(new ChatMessageFancifier().fancifyUpdateMessage("Update HERE!"), new URL(VersionCheck.modnametourl.get(VersionCheck.messages.get(s)))));
                 }
+            if (VersionCheck.urls.size() > 0)
+                for (String s : VersionCheck.urls) {
+                    VersionCheck.urls.remove(s);
+                    event.player.addChatMessage(new ChatMessageFancifier().fancifyURL(s));
+                }
         }
-        //  catch(MalformedURLException e) {
-        //  System.out.println(VersionCheck.messages.get(k));
-        // }
         catch (Exception e) {
             e.printStackTrace();
         }
